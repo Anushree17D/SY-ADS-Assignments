@@ -50,6 +50,16 @@ void display(){
     printf("\n");
 }
 
+void peek(){
+    if (front == -1 && rear == -1){
+        printf("Queue Empty");
+        return;
+    }
+
+    int val = queue[front];
+    printf ("Peeked and found element: %d\n",val);
+}
+
 int main(){
     int choice, element;
     printf("---Primitive Operations on Queue---\n");
@@ -59,7 +69,8 @@ int main(){
         printf("1. Insert or Enqueue\n");
         printf("2. Delete or Dequeue\n");
         printf("3. Display\n");
-        printf ("4. Exit\n");
+        printf("4. Peek\n");
+        printf("5. Exit\n");
         printf("Enter your choice:\n");
         scanf("%d", &choice);
 
@@ -79,6 +90,10 @@ int main(){
                 break;
 
             case 4:
+            peek();
+            break;
+
+            case 5:
             return 0;
         }
     }
